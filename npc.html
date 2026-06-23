@@ -1,0 +1,347 @@
+<html><head>
+  <title>简花花26.1！</title>
+  <link rel="stylesheet" href="npc.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <style>
+  body {
+   background: #FDF6E3;
+   margin: 0;
+}
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1001;
+}
+a {
+  color: inherit;           /* 继承父元素的颜色 */
+  text-decoration: none;    /* 去掉下划线 */
+}
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+.left {
+   margin-left: 5vw;
+}
+.back {
+   background: #F4E8D1;
+}
+.v {
+   color: #5C4B3A;
+}
+.bor {
+   border-radius: 5px;
+}
+.tra {
+   transition: all 0.3s;
+}
+.trn:hover, .trn:active {
+   transform: scale(1.05);
+   background: #D8C4A0;
+   border-radius: 5px;
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+a {
+   text-decoration: none;
+}
+/*----------------------------------------------------------------*/
+/*                                                                */
+/*----------------------------------------------------------------*/
+.q1 {
+   display: flex;
+   background: #F4E8D1;
+   margin-top: 15vw;
+   border-radius: 5px;
+   box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
+.q2, .q3 {
+   flex: 1;
+}
+.q2 img {
+   width: 100%;;
+   display: block;
+   border-radius: 5px;
+}
+.q3 {
+margin-left: 2vw;
+text-align: center;
+}
+.q4 {
+   color: #8FBC8F;
+}
+/*----------------------------------------------------------------*/
+.w1 {
+   display: flex;
+   background: #F4E8D1;
+   margin-top: 5vw;
+   border-radius: 5px;
+   box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
+.w2, .w4 {
+   flex: 1;
+}
+.w4 img {
+   width: 100%;
+   display: block;
+   border-radius: 5px;
+}
+.w2 {
+   margin-left: 2vw;
+   text-align: center;
+}
+.w3 {
+   color: #8FBC8F;
+}
+.w5 {
+   margin-right: 2vw;
+}
+/*----------------------------------------------------------------*/
+.e1 {
+   display: flex;
+   background: #F4E8D1;
+   margin-top: 5vw;
+   border-radius: 5px;
+   box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
+.e2, .e3 {
+   flex: 1;
+}
+.e2 img {
+   width: 100%;
+   display: block;
+   border-radius: 5px;
+}
+.e3 {
+   margin-left: 2vw;
+   text-align: center;
+}
+.e4 {
+   color: #8FBC8F;
+}
+/*-----------------------------------------------------------------*/
+.r1 {
+   display: flex;
+   background: #F4E8D1;
+   margin-top: 5vw;
+   border-radius: 5px;
+   box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
+.r2, .r5 {
+   flex: 1;
+}
+.r5 img {
+   width: 100%;
+   display: block;
+   border-radius: 5px;
+}
+.r2 {
+   margin-left: 2vw;
+   text-align: center;
+}
+.r3 {
+   color: #8FBC8F;
+}
+.r4 {
+   margin-right: 2vw;
+}
+/*-----------------------------------------------------------------*/
+.t1 {
+   display: flex;
+   background: #F4E8D1;
+   margin-top: 5vw;
+   border-radius: 5px;
+   box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
+.t2, .t4 {
+   flex: 1;
+}
+.t2 img {
+   width: 100%;
+   display: block;
+   border-radius: 5px;
+}
+.t4 {
+   margin-left: 2vw;
+   text-align: center;
+}
+.t3 {
+   color: #8FBC8F;
+}
+.t5 {
+   margin-left: 2vw;
+}
+/*-----------------------------------------------------------------*/
+.co {
+   color: #5C4B3A;
+}
+.q21 {
+  position: fixed;
+  z-index: 1003;
+  background: #8FBC8F;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;               /* 三条横线之间的间距 */
+  cursor: pointer;
+  transition: background 0.7s;
+}
+.q31 {
+  width: 100%;
+  height: 10vw;
+}
+.q21:hover {
+  background: #7DAB7D;
+}
+
+/* 三条横线 */
+.q-1, .q-2, .q-3 {
+  width: 15px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.7s ease;
+  transform-origin: center;
+}
+
+/* ===== 点击后变成 X 的状态 ===== */
+.q21.active .q-1 {
+  transform: translateY(4px) rotate(45deg);
+}
+.q21.active .q-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.q21.active .q-3 {
+  transform: translateY(-4px) rotate(-45deg);
+}
+.q-41 {
+  background: #FAF0E0;
+}
+.sidebar-closed.open {
+  left: 0;
+  z-index: 1001;
+}
+.sidebar-closed {
+  position: fixed;
+  top: 0;
+  left: -240px;
+  width: 34%;          /* 必须有宽度 */
+  height: 100%;          /* 占满全屏高度 */
+  background: #F4E8D1;
+  transition: left 0.9s; /* 平滑动画 */
+  padding: 20px;
+  z-index: 1001;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.q31 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 10vw;
+  background: #8FBC8F;
+  padding: 0 4vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1002;
+}
+.q41 {
+  background: #8FBC8F;
+  left: 160px;
+  position: fixed;
+  z-index: 1002;
+  font-size: 4vw;
+  color: #ffffff;
+}
+  </style>
+</head>
+<body>
+<!------------------------------------------------------------->
+<!------------------------------------------------------------->
+ <div class="q31">
+  <button class="q21" id="q">
+   <div class="q-1"></div>
+   <div class="q-2"></div>
+   <div class="q-3"></div>
+  </button>
+  <div class="q41">Jhn 26.1!</div>
+ </div>
+  <div id="q1" class="sidebar-closed">
+   <p>Hello Jhn26.1</p>
+   <a href="../index/index.html">服务器介绍</a>
+   <div class="q-41">
+	<span>服务器名人榜</span>
+   </div>
+   <a href="../ll/ll.html">生电服务器介绍</a>
+   <a href="../pvp/pvp.html">PVP服务器介绍</a>
+  </div>
+<!------------------------------------------------------------->
+ <div class="q1">
+  <div class="q2">
+   <img src="g.jpg" alt="图片描述">
+  </div>
+<!------------------->
+  <div class="q3">
+   <div class="q4">腐竹•Cathat_</div>
+   <div class="q5 v">「Jhn永存」</div>
+  </div>
+ </div>
+<!------------------------------------------------------------->
+ <div class="w1">
+  <div class="w2">
+   <div class="w3">管理员•lizl_996</div>
+   <div class="w5 v">「需要一些好的地皮搞建筑的活化石」</div>
+  </div>
+<!------------------>
+  <div class="w4">
+   <img src="g2.jpg" alt="图片描述">
+  </div>
+ </div>
+ <!------------------------------------------------------------>
+ <div class="e1">
+  <div class="e2">
+   <img src="g3.png" alt="图片描述">
+  </div>
+  <!----------------->
+  <div class="e3">
+   <div class="e4">666</div>
+   <div class="e5 v">「/*:)*/ 」</div>
+  </div>
+ </div>
+<!-------------------------------------------------------------->
+ <div class="r1">
+  <div class="r2">
+   <div class="r3">Diocek965</div>
+   <div class="r4 v">「我要去收我的小麦喽」</div>
+  </div>
+<!--------------------->
+  <div class="r5">
+   <img src="g4.jpg" alt="图片描述">
+  </div>
+ </div>
+<!-------------------------------------------------------------->
+ <div class="t1">
+  <div class="t2">
+   <img src="g5.jpg" alt="111">
+  </div>
+<!---------------------->
+  <div class="t4">
+   <div class="t3">服务器•w377e</div>
+   <div class="t5 v">「因为思念 所以有家」</div>
+  </div>
+ </div>
+ <!-------------------------------------------------------------->
+ <script>
+ let efb = document.querySelector('#q');
+let menu = document.querySelector('#q1');
+
+efb.addEventListener('click', () => {
+  menu.classList.toggle('open');
+  efb.classList.toggle('active');   // 加上这一行，控制三条杠变 X
+});
+ </script>
+</body>
+</html>
