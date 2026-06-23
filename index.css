@@ -1,0 +1,123 @@
+body {
+   background: #FDF6E3;
+   color: #5C4B3A;
+   margin: 0;
+}
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1001;
+}
+a {
+  color: inherit;           /* 继承父元素的颜色 */
+  text-decoration: none;    /* 去掉下划线 */
+}
+/*----------------------------------*/
+.sidebar-closed {
+  position: fixed;
+  top: 0;
+  left: -240px;          /* 隐藏 */
+  width: 125px;          /* 必须有宽度 */
+  height: 100%;          /* 占满全屏高度 */
+  background: #F4E8D1;
+  transition: left 0.5s; /* 平滑动画 */
+  padding: 20px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.sidebar-closed.open {
+  left: 0;
+  z-index: 1001;
+}
+.w {
+  width: 80vw;
+  height: 250vw;
+  margin-top: 15vw;
+  margin-left: 10vw;
+  background: #F4E8D1;
+  border-radius: 5vw;
+}
+.w1 {
+  margin-left: 5vw;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 0;
+}
+.q1 {
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.q1:active {
+  transform: scale(0.03);
+  background:
+}
+.q3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 10vw;
+  background: #8FBC8F;
+  padding: 0 4vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1002;
+}
+.q4 {
+  background: #8FBC8F;
+  left: 160px;
+  position: fixed;
+  z-index: 1002;
+  font-size: 4vw;
+  color: #ffffff;
+}
+/* ===== 汉堡菜单按钮 ===== */
+.q2 {
+  position: fixed;
+  z-index: 1002;
+  background: #8FBC8F;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;               /* 三条横线之间的间距 */
+  cursor: pointer;
+  transition: background 0.7s;
+}
+.q3 {
+  width: 100%;
+  height: 10vw;
+}
+.q2:hover {
+  background: #7DAB7D;
+}
+
+/* 三条横线 */
+.q-1, .q-2, .q-3 {
+  width: 15px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.7s ease;
+  transform-origin: center;
+}
+
+/* ===== 点击后变成 X 的状态 ===== */
+.q2.active .q-1 {
+  transform: translateY(4px) rotate(45deg);
+}
+.q2.active .q-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.q2.active .q-3 {
+  transform: translateY(-4px) rotate(-45deg);
+}
+.q-4 {
+  background: #FAF0E0;
+}
